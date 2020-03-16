@@ -1,0 +1,21 @@
+<p>employee works!</p>
+{{name}}
+
+<div [hidden]="isHidden" [innerText]="name"></div>
+
+<div *ngIf="isHidden" [innerText]="name"></div>
+
+<button (click)="toggle()">Toggle</button>
+Employee Details:
+<br>
+{{employee.id}}
+<br>
+{{employee.name}}
+<br>
+{{employee.email}}
+<br>
+{{employee.dob}}
+<br>
+{{employee.salary}}
+
+<app-employee-list></app-employee-list>
