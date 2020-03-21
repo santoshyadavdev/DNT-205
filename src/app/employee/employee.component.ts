@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Employee } from './employee';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-employee',
@@ -7,6 +8,10 @@ import { Employee } from './employee';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
+
+  @ViewChild(HeaderComponent, { static: true }) header: HeaderComponent;
+
+  @ViewChild('errorDiv', { static: true }) errorDiv: ElementRef;
 
   name = 'Umair';
   isHidden = false;
@@ -22,6 +27,8 @@ export class EmployeeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.header.title = 'Employee';
+    this.errorDiv.nativeElement.innerText = 'Some error';
   }
 
   toggle() {

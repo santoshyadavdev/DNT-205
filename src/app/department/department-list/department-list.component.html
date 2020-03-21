@@ -1,0 +1,27 @@
+<!-- {{departmentList | json}} -->
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>HOD</th>
+      <th>Count</th>
+      <th>Select</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let department of departmentList;">
+      <td>{{department.id}}</td>
+      <td [innerText]="department.name"></td>
+      <td>{{department.hod}}</td>
+      <td>{{department.empCount}}</td>
+      <td>
+        <button class="btn btn-primary" (click)="sendToParent(department)">
+          Select
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
