@@ -1,5 +1,16 @@
 <h1>
   Hello World!
 </h1>
+<div [ngSwitch]="userType">
+  <div *ngSwitchCase="'User'">
+    <app-employee></app-employee>
+  </div>
+  <div *ngSwitchCase="'Admin'">
+    Welcome to Dashboard
+  </div>
+  <div *ngSwitchDefault>
+    Please login!
+  </div>
+</div>
 
-<app-employee></app-employee>
+<!-- <app-employee></app-employee> -->
