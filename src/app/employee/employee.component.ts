@@ -13,7 +13,7 @@ export class EmployeeComponent implements OnInit {
 
   @ViewChild('errorDiv', { static: true }) errorDiv: ElementRef;
 
-  name = 'Umair';
+  name: string;
   isHidden = false;
 
   employee: Employee = {
@@ -24,7 +24,9 @@ export class EmployeeComponent implements OnInit {
     salary: 20000
   };
 
-  constructor() { }
+  constructor() {
+    this.name = 'Umair';
+  }
 
   ngOnInit(): void {
     this.header.title = 'Employee';

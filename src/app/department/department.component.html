@@ -2,7 +2,13 @@
   Department List
 </h1>
 
+<button class="btn btn-primary" (click)="addDepartment()">
+  Add Department
+</button>
+
+
 <div *ngIf="selectedDepartment">
   {{selectedDepartment.name}}
 </div>
-<app-department-list [departmentList]="deptList" (selectDepartment)="receiveFromChild($event)"></app-department-list>
+<app-department-list [departmentList]="deptList" [title]="'Department Data'"
+(selectDepartment)="receiveFromChild($event)"></app-department-list>

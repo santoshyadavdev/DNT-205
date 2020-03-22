@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,11 @@ import { Component } from '@angular/core';
   // cvcvcjkhkjvbh`,
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements DoCheck {
   title = 'ecomapp';
   userType = 'Users';
+
+  ngDoCheck(): void {
+    console.log('this is do check');
+  }
 }
