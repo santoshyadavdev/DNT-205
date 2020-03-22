@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit,
+  ViewChild, ElementRef,
+  AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { Employee } from './employee';
 import { HeaderComponent } from '../header/header.component';
 
@@ -10,6 +12,8 @@ import { HeaderComponent } from '../header/header.component';
 export class EmployeeComponent implements OnInit, AfterViewInit {
 
   // @ViewChild(HeaderComponent, { static: true }) header: HeaderComponent;
+
+  @ViewChildren(HeaderComponent) headerChildren: QueryList<HeaderComponent>;
 
   @ViewChild(HeaderComponent) header: HeaderComponent;
 
@@ -39,9 +43,15 @@ export class EmployeeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    console.log(this.header);
-    this.header.title = 'Employee';
-    this.errorDiv.nativeElement.innerText = 'Some error';
+    console.log(this.headerChildren);
+    // console.log(this.header);
+    // this.header.title = 'Employee';
+    // this.errorDiv.nativeElement.innerText = 'Some error';
+    this.headerChildren.forEach((header)=> {
+      header.title = 'New Employee';
+    });
   }
+
+
 
 }
