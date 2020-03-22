@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Employee } from './employee';
 import { HeaderComponent } from '../header/header.component';
 
@@ -7,9 +7,11 @@ import { HeaderComponent } from '../header/header.component';
   templateUrl: './employee.component.html',
   styleUrls: ['./employee.component.css']
 })
-export class EmployeeComponent implements OnInit {
+export class EmployeeComponent implements OnInit, AfterViewInit {
 
-  @ViewChild(HeaderComponent, { static: true }) header: HeaderComponent;
+  // @ViewChild(HeaderComponent, { static: true }) header: HeaderComponent;
+
+  @ViewChild(HeaderComponent) header: HeaderComponent;
 
   @ViewChild('errorDiv', { static: true }) errorDiv: ElementRef;
 
@@ -29,12 +31,17 @@ export class EmployeeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.header.title = 'Employee';
-    this.errorDiv.nativeElement.innerText = 'Some error';
+
   }
 
   toggle() {
     this.isHidden = !this.isHidden;
+  }
+
+  ngAfterViewInit(): void {
+    console.log(this.header);
+    this.header.title = 'Employee';
+    this.errorDiv.nativeElement.innerText = 'Some error';
   }
 
 }
