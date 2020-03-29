@@ -1,2 +1,10 @@
 
-<app-todo-list [todos]="todoList" ></app-todo-list>
+<app-photos></app-photos>
+<button class="btn btn-success" (click)="updateTask()">
+  Update Task
+</button>
+
+<app-todo-list [todos]="todoList$ | async" ></app-todo-list>
+
+
+<!-- <app-todo-list [todos]="todoList" ></app-todo-list> -->

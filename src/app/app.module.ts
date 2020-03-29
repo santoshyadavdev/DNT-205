@@ -13,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { ContainerComponent } from './container/container.component';
 import { TodosComponent } from './todos/todos.component';
 import { TodoListComponent } from './todos/todo-list/todo-list.component';
+import { PhotosComponent } from './todos/photos/photos.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TodoListComponent } from './todos/todo-list/todo-list.component';
     HeaderComponent,
     ContainerComponent,
     TodosComponent,
-    TodoListComponent
+    TodoListComponent,
+    PhotosComponent
   ],
   imports: [
     BrowserModule,
