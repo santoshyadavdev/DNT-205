@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpRequest } from '@angular/common/http';
+import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
 import { Todo } from '../models/todos';
 
 @Injectable({
@@ -10,11 +10,15 @@ export class TodosService {
   constructor(private http: HttpClient) { }
 
   getTodos() {
-    return this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos');
+    return this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos', {
+      headers: new HttpHeaders().set('access-token', 'dfdsfds387645sdfhkj')
+    });
   }
 
   updateTodo(todo: Todo) {
-    return this.http.put<Todo>('https://jsonplaceholder.typicode.com/todos/' + todo.id, todo);
+    return this.http.put<Todo>('https://jsonplaceholder.typicode.com/todos/' + todo.id, todo, {
+      headers: new HttpHeaders().set('access-token', 'dfdsfds387645sdfhkj')
+    });
   }
 
   getPhotos() {

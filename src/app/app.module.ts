@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { ContainerComponent } from './container/container.component';
 import { TodosComponent } from './todos/todos.component';
 import { TodoListComponent } from './todos/todo-list/todo-list.component';
 import { PhotosComponent } from './todos/photos/photos.component';
+import { ApiInterceptor } from './api.interceptor';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { PhotosComponent } from './todos/photos/photos.component';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
