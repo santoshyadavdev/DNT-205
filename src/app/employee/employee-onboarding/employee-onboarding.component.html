@@ -1,0 +1,31 @@
+<!-- {{searchInput.value }}
+{{searchInput.valid }} -->
+
+<!-- <input type="text" [formControl]="searchInput"> -->
+
+{{employeeForm.value | json}}
+<form [formGroup]="employeeForm">
+  <div class="form-group">
+    <input class="form-control" type="text" formControlName="name" placeholder="Employee Name">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" formControlName="email" placeholder="Employee Email">
+  </div>
+  <div class=" form-group">
+    <input class="form-control" type="text" formControlName="dob" placeholder="Employee DOB">
+  </div>
+  <div formGroupName="address">
+    <div class="form-group">
+      <input class="form-control" type="text" formControlName="addrLine1" placeholder="Address Line1">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" formControlName="addrLine2" placeholder="Address Line2">
+    </div>
+    <div class=" form-group">
+      <input class="form-control" type="text" formControlName="city" placeholder="City">
+    </div>
+    <div class=" form-group">
+      <input class="form-control" type="text" formControlName="pin" placeholder="Pin">
+    </div>
+  </div>
+</form>

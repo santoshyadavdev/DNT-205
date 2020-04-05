@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +17,7 @@ import { TodoListComponent } from './todos/todo-list/todo-list.component';
 import { PhotosComponent } from './todos/photos/photos.component';
 import { ApiInterceptor } from './api.interceptor';
 import { TodoAddComponent } from './todos/todo-add/todo-add.component';
+import { EmployeeOnboardingComponent } from './employee/employee-onboarding/employee-onboarding.component';
 
 @NgModule({
   declarations: [
@@ -30,14 +31,16 @@ import { TodoAddComponent } from './todos/todo-add/todo-add.component';
     TodosComponent,
     TodoListComponent,
     PhotosComponent,
-    TodoAddComponent
+    TodoAddComponent,
+    EmployeeOnboardingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }
