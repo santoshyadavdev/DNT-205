@@ -1,0 +1,22 @@
+<!-- {{ todo | json }} -->
+{{todoForm.invalid}}
+{{todoForm.valid}}
+{{todoForm.pristine}}
+{{todoForm.dirty}}
+<!-- {{todoForm.value | json}} -->
+{{todoForm.submitted}}
+
+<form #todoForm="ngForm" (ngSubmit)="addTodo(todoForm)">
+  <div class="form-group">
+    <input required minlength="3" maxlength="10" class="form-control" type="text" [(ngModel)]="todo.title" name="title" placeholder="Enter the Title">
+  </div>
+  <div class="form-group">
+    <input required type="number" class="form-control" [(ngModel)]="todo.userId" name="userid" placeholder="Enter the UserId">
+  </div>
+  <div class="form-group">
+    <input type="checkbox" class="form-control" [(ngModel)]="todo.completed" name="completed">
+  </div>
+  <div>
+    <button [disabled]="todoForm.invalid" type="submit" class="btn btn-primary">Add Todo</button>
+  </div>
+</form>

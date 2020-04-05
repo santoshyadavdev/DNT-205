@@ -15,6 +15,10 @@ export class TodosService {
     });
   }
 
+  addTodo(todo: Todo) {
+    return this.http.post<Todo>('https://jsonplaceholder.typicode.com/todos', todo);
+  }
+
   updateTodo(todo: Todo) {
     return this.http.put<Todo>('https://jsonplaceholder.typicode.com/todos/' + todo.id, todo, {
       headers: new HttpHeaders().set('access-token', 'dfdsfds387645sdfhkj')
