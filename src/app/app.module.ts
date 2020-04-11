@@ -5,8 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EmployeeComponent } from './employee/employee.component';
-import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DepartmentComponent } from './department/department.component';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
@@ -17,7 +15,6 @@ import { TodoListComponent } from './todos/todo-list/todo-list.component';
 import { PhotosComponent } from './todos/photos/photos.component';
 import { ApiInterceptor } from './api.interceptor';
 import { TodoAddComponent } from './todos/todo-add/todo-add.component';
-import { EmployeeOnboardingComponent } from './employee/employee-onboarding/employee-onboarding.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -25,12 +22,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { EmployeeModule } from './employee/employee.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeComponent,
-    EmployeeListComponent,
     DepartmentComponent,
     DepartmentListComponent,
     HeaderComponent,
@@ -39,7 +35,6 @@ import { MatListModule } from '@angular/material/list';
     TodoListComponent,
     PhotosComponent,
     TodoAddComponent,
-    EmployeeOnboardingComponent,
     MainNavComponent
   ],
   imports: [
@@ -47,6 +42,7 @@ import { MatListModule } from '@angular/material/list';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    EmployeeModule,
     FormsModule,
     ReactiveFormsModule,
     LayoutModule,
