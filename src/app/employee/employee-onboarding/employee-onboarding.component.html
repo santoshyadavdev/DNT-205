@@ -3,10 +3,19 @@
 
 <!-- <input type="text" [formControl]="searchInput"> -->
 
+<button class="btn btn-success" (click)="editForm()">
+  Edit Form
+</button>
+
 {{employeeForm.value | json}}
-<form [formGroup]="employeeForm">
+<form [formGroup]="employeeForm" (ngSubmit)="addOnboardingData()">
   <div class="form-group">
     <input class="form-control" type="text" formControlName="name" placeholder="Employee Name">
+    <div>
+      <div *ngIf="employeeForm.get('name')?.errors">
+        The min length for name should be {{employeeForm.get('name')?.errors?.minlength?.requiredLength }}
+      </div>
+    </div>
   </div>
   <div class="form-group">
     <input class="form-control" type="text" formControlName="email" placeholder="Employee Email">
@@ -17,6 +26,10 @@
   <div formGroupName="address">
     <div class="form-group">
       <input class="form-control" type="text" formControlName="addrLine1" placeholder="Address Line1">
+
+      <div *ngIf="employeeForm.get('address.addrLine1')?.errors?.minlength">
+        The min length for name should be {{employeeForm.get('address.addrLine1')?.errors?.minlength?.requiredLength }}
+      </div>
     </div>
     <div class="form-group">
       <input class="form-control" type="text" formControlName="addrLine2" placeholder="Address Line2">
@@ -28,4 +41,43 @@
       <input class="form-control" type="text" formControlName="pin" placeholder="Pin">
     </div>
   </div>
+  <div class="form-group">
+    <button class="btn btn-primary" type="button" (click)="addExp()">
+      Add Experience
+    </button>
+  </div>
+  <div formArrayName="pastExp">
+    <div *ngFor="let control of pastExp.controls;let i=index">
+      <div [formGroupName]="i">
+        <div class="form-group">
+          <input class="form-control" type="text" formControlName="orgName" placeholder="Org Name">
+          <div *ngIf="employeeForm.get(['pastExp',i,'orgName'])?.errors?.required">
+            The orgName is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="date" formControlName="fromDate" placeholder="From Date">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="date" formControlName="toDate" placeholder="To Date">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="text" formControlName="designation" placeholder="Designation">
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-danger" (click)="removeExp(i)">
+          Remove Experience
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" (click)="removeAllExp()">
+      Remove All
+    </button>
+  </div>
+  <button [disabled]="employeeForm.invalid" type="submit" class="btn btn-primary">
+    Save Data
+  </button>
 </form>
