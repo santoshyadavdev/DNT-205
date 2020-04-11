@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
 import { OnboardingService } from './services/onboarding.service';
+import { FormValidator } from './customvalidator';
 @Component({
   selector: 'app-employee-onboarding',
   templateUrl: './employee-onboarding.component.html',
@@ -21,7 +22,7 @@ export class EmployeeOnboardingComponent implements OnInit {
     // this.searchInput = new FormControl('wrtretet');
     this.employeeForm = this.fb.group({
       name: new FormControl({ value: '', disabled: true }, {
-        updateOn: 'blur', validators: [Validators.required, Validators.minLength(10)]
+        updateOn: 'blur', validators: [Validators.required, Validators.minLength(10), FormValidator.validateName]
       }),
       email: new FormControl('', [Validators.required, Validators.email]),
       dob: new FormControl(''),

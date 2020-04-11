@@ -12,6 +12,7 @@
   <div class="form-group">
     <input class="form-control" type="text" formControlName="name" placeholder="Employee Name">
     <div>
+      {{employeeForm.get('name')?.errors | json }}
       <div *ngIf="employeeForm.get('name')?.errors">
         The min length for name should be {{employeeForm.get('name')?.errors?.minlength?.requiredLength }}
       </div>
