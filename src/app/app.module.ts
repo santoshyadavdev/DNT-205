@@ -10,11 +10,7 @@ import { DepartmentComponent } from './department/department.component';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { HeaderComponent } from './header/header.component';
 import { ContainerComponent } from './container/container.component';
-import { TodosComponent } from './todos/todos.component';
-import { TodoListComponent } from './todos/todo-list/todo-list.component';
-import { PhotosComponent } from './todos/photos/photos.component';
 import { ApiInterceptor } from './api.interceptor';
-import { TodoAddComponent } from './todos/todo-add/todo-add.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -23,6 +19,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { EmployeeModule } from './employee/employee.module';
+import { TodosModule } from './todos/todos.module';
 
 @NgModule({
   declarations: [
@@ -31,10 +28,6 @@ import { EmployeeModule } from './employee/employee.module';
     DepartmentListComponent,
     HeaderComponent,
     ContainerComponent,
-    TodosComponent,
-    TodoListComponent,
-    PhotosComponent,
-    TodoAddComponent,
     MainNavComponent
   ],
   imports: [
@@ -42,7 +35,8 @@ import { EmployeeModule } from './employee/employee.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    EmployeeModule,
+    // EmployeeModule,
+    TodosModule,
     FormsModule,
     ReactiveFormsModule,
     LayoutModule,
