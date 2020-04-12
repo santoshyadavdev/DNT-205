@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
 import { Todo } from '../models/todos';
+import { shareReplay, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class TodosService {
   getTodos() {
     return this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos', {
       headers: new HttpHeaders().set('access-token', 'dfdsfds387645sdfhkj')
-    });
+    }).pipe(tap(data => console.log(data)));
   }
 
   addTodo(todo: Todo) {

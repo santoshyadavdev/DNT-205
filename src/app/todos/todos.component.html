@@ -5,6 +5,8 @@
   Update Task
 </button> -->
 <app-todo-add></app-todo-add>
+<hr>
+<router-outlet></router-outlet>
 
 <app-todo-list [todos]="todoList$ | async" ></app-todo-list>
 

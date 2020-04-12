@@ -5,6 +5,7 @@
       <th>UserID</th>
       <th>Title</th>
       <th>Completed</th>
+      <th>Details</th>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +14,9 @@
       <td>{{todo.userId}}</td>
       <td>{{todo.title}}</td>
       <td>{{todo.completed}}</td>
+      <td>
+        <button class="btn btn-primary" [routerLink]="['/todos',todo.id]" routerLinkActive="router-link-active">Details</button>
+      </td>
     </tr>
   </tbody>
 </table>

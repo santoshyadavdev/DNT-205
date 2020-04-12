@@ -20,6 +20,6 @@ export class ApiInterceptor implements HttpInterceptor {
     // if(request.method = 'GET') {
 
     // }
-    return next.handle(req);
+    return next.handle(request);
   }
 }

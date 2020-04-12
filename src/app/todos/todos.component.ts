@@ -3,6 +3,7 @@ import { TodosService } from './services/todos.service';
 import { Todo } from './models/todos';
 import { Observable, Subscription } from 'rxjs';
 import { ConstantPool } from '@angular/compiler';
+import { shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-todos',
@@ -17,7 +18,7 @@ export class TodosComponent implements OnInit, OnDestroy {
   constructor(private todosService: TodosService) { }
 
   ngOnInit(): void {
-    this.todoList$ = this.todosService.getTodos();
+    this.todoList$ = this.todosService.getTodos().pipe(shareReplay(1));
     // this.subscription = this.todosService.getTodos().subscribe((data) => this.todoList = data);
     // const data =  this.todosService.getTodos();
   }
