@@ -20,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { EmployeeModule } from './employee/employee.module';
 import { TodosModule } from './todos/todos.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { TodosModule } from './todos/todos.module';
     DepartmentListComponent,
     HeaderComponent,
     ContainerComponent,
-    MainNavComponent
+    MainNavComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

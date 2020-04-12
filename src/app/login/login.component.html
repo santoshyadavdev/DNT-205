@@ -1,0 +1,16 @@
+<div class="alert alert-danger" *ngIf="loginStatus==='Failed'">
+  The username and password is incorrect!
+</div>
+
+<h1>Login</h1>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <div class="form-group">
+    <input class="form-control" type="text" formControlName="userName" placeholder="Please enter the user name">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="password" formControlName="password" placeholder="Enter your password">
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+  </div>
+</form>
