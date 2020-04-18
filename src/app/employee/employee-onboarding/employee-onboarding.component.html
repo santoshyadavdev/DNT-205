@@ -7,6 +7,8 @@
   Edit Form
 </button>
 
+Pristine Status : {{employeeForm.pristine}}
+
 {{employeeForm.value | json}}
 <form [formGroup]="employeeForm" (ngSubmit)="addOnboardingData()">
   <div class="form-group">

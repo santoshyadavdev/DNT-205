@@ -72,9 +72,26 @@ export class EmployeeOnboardingComponent implements OnInit {
   addOnboardingData() {
     // console.log(this.employeeForm.value);
     console.log(this.employeeForm.getRawValue());
+    // this.employeeForm.reset();
+    this.employeeForm.reset(this.resetForm());
   }
 
   editForm() {
     this.employeeForm.enable();
+  }
+
+  resetForm() {
+    return {
+      name: '',
+      email: '',
+      dob: '',
+      address: {
+        addrLine1: '',
+        addrLine2: '',
+        city: '',
+        pin: ''
+      },
+      pastExp: []
+    }
   }
 }
