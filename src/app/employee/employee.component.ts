@@ -1,8 +1,11 @@
-import { Component, OnInit,
+import {
+  Component, OnInit,
   ViewChild, ElementRef,
-  AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+  AfterViewInit, ViewChildren, QueryList
+} from '@angular/core';
 import { Employee } from './employee';
 import { HeaderComponent } from '../header/header.component';
+import { ObseravableService } from './services/obseravable.service';
 
 @Component({
   selector: 'app-employee',
@@ -30,7 +33,7 @@ export class EmployeeComponent implements OnInit, AfterViewInit {
     salary: 20000
   };
 
-  constructor() {
+  constructor(private obsService: ObseravableService) {
     this.name = 'Umair';
   }
 
@@ -47,11 +50,14 @@ export class EmployeeComponent implements OnInit, AfterViewInit {
     // console.log(this.header);
     // this.header.title = 'Employee';
     // this.errorDiv.nativeElement.innerText = 'Some error';
-    this.headerChildren.forEach((header)=> {
+    this.headerChildren.forEach((header) => {
       header.title = 'New Employee';
     });
   }
 
+  addEmployee() {
+      this.obsService.addEmployee(this.employee);
+  }
 
 
 }

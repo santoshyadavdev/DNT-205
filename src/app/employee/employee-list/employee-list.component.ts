@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../employee';
+import { ObseravableService } from '../services/obseravable.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-employee-list',
@@ -32,13 +34,16 @@ export class EmployeeListComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  employee$: Observable<Employee[]>;
+
+  constructor(private obsService: ObseravableService) { }
 
   ngOnInit(): void {
+    this.employee$ = this.obsService.getEmployee();
   }
 
-  trackByFn(i: number,emp: Employee) {
-    return  emp.id;
+  trackByFn(i: number, emp: Employee) {
+    return emp.id;
   }
 
 }
