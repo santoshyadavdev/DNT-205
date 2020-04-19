@@ -23,6 +23,8 @@ import { TodosModule } from './todos/todos.module';
 import { LoginComponent } from './login/login.component';
 import { NamePipe } from './pipes/name.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }
