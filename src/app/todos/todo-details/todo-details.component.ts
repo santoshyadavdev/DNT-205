@@ -12,7 +12,7 @@ export class TodoDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(data => this.todoid =+  data.get('id'));
+    this.route.paramMap.subscribe(data => this.todoid = +  data.get('id'));
   }
 
 }

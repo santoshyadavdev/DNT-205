@@ -1,6 +1,6 @@
 import {
-  Component, OnInit, ContentChild,
-  AfterContentInit, ContentChildren, QueryList, Host
+  AfterContentInit, Component, ContentChild,
+  ContentChildren, Host, OnInit, QueryList
 } from '@angular/core';
 
 import { DepartmentComponent } from '../department/department.component';

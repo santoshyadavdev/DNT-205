@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from './service/login.service';
 
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loginStatus = 'Not Loggedin';
   constructor(private fb: FormBuilder,
-    private router: Router, private loginService: LoginService) { }
+              private router: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({

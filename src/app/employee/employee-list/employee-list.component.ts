@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from '../employee';
-import { ObseravableService } from '../services/obseravable.service';
 import { Observable } from 'rxjs';
+import { Employee } from '../employee';
 import { BehaviorService } from '../services/behavior.service';
+import { ObseravableService } from '../services/obseravable.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -38,7 +38,7 @@ export class EmployeeListComponent implements OnInit {
   employee$: Observable<Employee[]>;
 
   constructor(private obsService: ObseravableService,
-    private behService: BehaviorService) { }
+              private behService: BehaviorService) { }
 
   ngOnInit(): void {
     // this.employee$ = this.obsService.getEmployee();

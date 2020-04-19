@@ -1,7 +1,7 @@
+import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
-import { Todo } from '../models/todos';
 import { shareReplay, tap } from 'rxjs/operators';
+import { Todo } from '../models/todos';
 
 @Injectable({
   providedIn: 'root'

@@ -8,7 +8,7 @@ export class FilterPipe implements PipeTransform {
 
   transform(depList: Department[], count: number): Department[] {
     // console.log(depList, count);
-    return depList.filter((dept)=> dept.empCount > count);
+    return depList.filter((dept) => dept.empCount > count);
   }
 
 }

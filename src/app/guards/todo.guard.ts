@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {
-  CanActivate, ActivatedRouteSnapshot,
-  RouterStateSnapshot, UrlTree, Resolve
+  ActivatedRouteSnapshot, CanActivate,
+  Resolve, RouterStateSnapshot, UrlTree
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Todo } from '../todos/models/todos';

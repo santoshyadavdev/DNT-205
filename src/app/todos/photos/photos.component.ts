@@ -1,6 +1,6 @@
+import { HttpEventType } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { TodosService } from '../services/todos.service';
-import { HttpEventType } from '@angular/common/http';
 
 @Component({
   selector: 'app-photos',
@@ -9,7 +9,7 @@ import { HttpEventType } from '@angular/common/http';
 })
 export class PhotosComponent implements OnInit {
 
-  loadedData: number = 0;
+  loadedData = 0;
   photosData: any;
   constructor(private todoService: TodosService) { }
 

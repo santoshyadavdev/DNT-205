@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
-import { OnboardingService } from './services/onboarding.service';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormValidator } from './customvalidator';
+import { OnboardingService } from './services/onboarding.service';
 @Component({
   selector: 'app-employee-onboarding',
   templateUrl: './employee-onboarding.component.html',
@@ -16,7 +16,7 @@ export class EmployeeOnboardingComponent implements OnInit {
     return this.employeeForm.get('pastExp') as FormArray;
   }
   constructor(private fb: FormBuilder,
-    private onBoardingService: OnboardingService) { }
+              private onBoardingService: OnboardingService) { }
 
   ngOnInit(): void {
     // this.searchInput = new FormControl('wrtretet');
@@ -92,6 +92,6 @@ export class EmployeeOnboardingComponent implements OnInit {
         pin: ''
       },
       pastExp: []
-    }
+    };
   }
 }

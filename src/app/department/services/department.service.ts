@@ -6,7 +6,7 @@ import { Department } from '../department';
 })
 export class DepartmentService {
 
-  deptList: Department[] =[];
+  deptList: Department[] = [];
   constructor() {
     console.log('new instance created');
   }

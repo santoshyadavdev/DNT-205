@@ -1,30 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DepartmentComponent } from './department/department.component';
-import { DepartmentListComponent } from './department/department-list/department-list.component';
-import { HeaderComponent } from './header/header.component';
-import { ContainerComponent } from './container/container.component';
-import { ApiInterceptor } from './api.interceptor';
-import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { EmployeeModule } from './employee/employee.module';
-import { TodosModule } from './todos/todos.module';
-import { LoginComponent } from './login/login.component';
-import { NamePipe } from './pipes/name.pipe';
-import { FilterPipe } from './pipes/filter.pipe';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ApiInterceptor } from './api.interceptor';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { ContainerComponent } from './container/container.component';
+import { DepartmentListComponent } from './department/department-list/department-list.component';
+import { DepartmentComponent } from './department/department.component';
+import { EmployeeModule } from './employee/employee.module';
+import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { NamePipe } from './pipes/name.pipe';
+import { TodosModule } from './todos/todos.module';
 
 @NgModule({
   declarations: [

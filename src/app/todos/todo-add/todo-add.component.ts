@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Todo } from '../models/todos';
 import { TodosService } from '../services/todos.service';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-todo-add',

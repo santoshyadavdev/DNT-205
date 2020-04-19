@@ -1,7 +1,7 @@
 import {
-  Component, OnInit, Input, EventEmitter, Output,
-  OnChanges, SimpleChanges,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges,
+  OnInit, Output,
+  SimpleChanges
 } from '@angular/core';
 import { Department } from '../department';
 

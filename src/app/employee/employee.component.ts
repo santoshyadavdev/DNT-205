@@ -1,12 +1,12 @@
 import {
-  Component, OnInit,
-  ViewChild, ElementRef,
-  AfterViewInit, ViewChildren, QueryList
+  AfterViewInit, Component,
+  ElementRef, OnInit,
+  QueryList, ViewChild, ViewChildren
 } from '@angular/core';
-import { Employee } from './employee';
 import { HeaderComponent } from '../header/header.component';
-import { ObseravableService } from './services/obseravable.service';
+import { Employee } from './employee';
 import { BehaviorService } from './services/behavior.service';
+import { ObseravableService } from './services/obseravable.service';
 
 @Component({
   selector: 'app-employee',
@@ -35,7 +35,7 @@ export class EmployeeComponent implements OnInit, AfterViewInit {
   };
 
   constructor(private obsService: ObseravableService,
-    private behaviorService: BehaviorService) {
+              private behaviorService: BehaviorService) {
     this.name = 'Umair';
   }
 
