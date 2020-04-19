@@ -10,7 +10,7 @@
 
 
 <div *ngIf="selectedDepartment">
-  {{selectedDepartment.name}}
+  {{selectedDepartment.name | name: 1}}
 </div>
 <app-department-list [departmentList]="deptList" [title]="'Department Data'"
 (selectDepartment)="receiveFromChild($event)"></app-department-list>

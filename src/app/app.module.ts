@@ -21,6 +21,8 @@ import { MatListModule } from '@angular/material/list';
 import { EmployeeModule } from './employee/employee.module';
 import { TodosModule } from './todos/todos.module';
 import { LoginComponent } from './login/login.component';
+import { NamePipe } from './pipes/name.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { LoginComponent } from './login/login.component';
     HeaderComponent,
     ContainerComponent,
     MainNavComponent,
-    LoginComponent
+    LoginComponent,
+    NamePipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,8 @@ export class DepartmentListComponent implements OnInit, OnChanges {
   @Input() title: string;
 
   @Output() selectDepartment = new EventEmitter<Department>();
+
+  deptCount = 0;
   constructor() {
     console.log('constructor');
   }

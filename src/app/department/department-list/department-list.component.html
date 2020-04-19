@@ -1,5 +1,5 @@
 <!-- {{departmentList | json}} -->
-
+<input type="number" class="form-control" [(ngModel)]="deptCount" name="deptCount" placeholder="Employee Count">
 {{title}}
 <table class="table">
   <thead>
@@ -12,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let department of departmentList;">
+    <tr *ngFor="let department of departmentList | filter: deptCount;">
       <td>{{department.id}}</td>
       <td [innerText]="department.name"></td>
       <td>{{department.hod}}</td>
