@@ -6,6 +6,7 @@ import {
 import { Employee } from './employee';
 import { HeaderComponent } from '../header/header.component';
 import { ObseravableService } from './services/obseravable.service';
+import { BehaviorService } from './services/behavior.service';
 
 @Component({
   selector: 'app-employee',
@@ -33,7 +34,8 @@ export class EmployeeComponent implements OnInit, AfterViewInit {
     salary: 20000
   };
 
-  constructor(private obsService: ObseravableService) {
+  constructor(private obsService: ObseravableService,
+    private behaviorService: BehaviorService) {
     this.name = 'Umair';
   }
 
@@ -56,7 +58,8 @@ export class EmployeeComponent implements OnInit, AfterViewInit {
   }
 
   addEmployee() {
-      this.obsService.addEmployee(this.employee);
+    // this.obsService.addEmployee(this.employee);
+    this.behaviorService.addEmployee(this.employee);
   }
 
 
