@@ -1,5 +1,7 @@
-import { Component, DoCheck, SkipSelf } from '@angular/core';
+import { Component, DoCheck, SkipSelf, Inject } from '@angular/core';
 import { DepartmentService } from './department/services/department.service';
+import { AppConfig } from './appconfig';
+import { APP_CONFIG } from './appconfig.provider';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +14,12 @@ export class AppComponent implements DoCheck {
   title = 'ecomapp';
   userType = 'Users';
 
-  constructor(@SkipSelf() private deptService: DepartmentService) { }
+  constructor(@SkipSelf() private deptService: DepartmentService,
+    @Inject(APP_CONFIG) private appConfig: AppConfig) { }
 
   ngDoCheck(): void {
     console.log('this is do check');
+    console.log(this.appConfig);
   }
 
   addDeprtment() {

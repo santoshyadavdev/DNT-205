@@ -25,6 +25,7 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { NamePipe } from './pipes/name.pipe';
 import { TodosModule } from './todos/todos.module';
+import { APP_CONFIG, APP_VALUE } from './appconfig.provider';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { TodosModule } from './todos/todos.module';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true },
+    { provide: APP_CONFIG, useValue: APP_VALUE }
   ],
   bootstrap: [AppComponent]
 })
