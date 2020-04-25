@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { pluck, tap } from 'rxjs/operators';
 import { Todo } from './models/todos';
+// import { TodosService } from './services/todos.service';
+import { todoProvider } from './todo.factory';
 import { TodosService } from './services/todos.service';
 
 @Component({
@@ -17,7 +19,9 @@ export class TodosComponent implements OnInit, OnDestroy {
   todoList$: Observable<Todo[]>;
   // constructor(private todosService: TodosService) { }
   constructor(private route: ActivatedRoute,
-              private todosService: TodosService) { }
+    private todosService: TodosService) {
+
+     }
 
   ngOnInit(): void {
     // this.route.data.subscribe((data) => console.log(data['todoData']));

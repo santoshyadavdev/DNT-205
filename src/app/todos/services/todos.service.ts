@@ -5,13 +5,14 @@ import { Todo } from '../models/todos';
 import { APP_CONFIG } from 'src/app/appconfig.provider';
 import { AppConfig } from 'src/app/appconfig';
 
-@Injectable({
-  providedIn: 'root'
-})
+
 export class TodosService {
 
   constructor(private http: HttpClient,
-    @Inject(APP_CONFIG) private appConfig: AppConfig) { }
+    @Inject(APP_CONFIG) private appConfig: AppConfig,
+    private isLoggedIn: boolean) {
+      console.log(isLoggedIn);
+    }
 
   getTodos() {
     return this.http.get<Todo[]>(`${this.appConfig.apiEndpoint}/todos`, {
